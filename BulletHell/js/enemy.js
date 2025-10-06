@@ -26,7 +26,7 @@ export class Enemy {
         const speedBonus = new Bonus(this.game.bonusesContainer, "s", new Vector2(Math.round(Math.random() * 90), Math.round(Math.random() * 90)), "speedBonusTexture");
         this.game.bonuses.push(healthBonus, speedBonus);
         this.life -= 25;
-        if (this.life <= 0) {
+        if (this.life <= 0 && !this.game.stopped) {
             document.body.querySelector("#win").style.display = "block";
             document.body.querySelector("#win").style.animation = "win 2s forwards";
             this.game.stopped = true;
