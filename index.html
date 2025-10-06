@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="win">
+        <h1>YOU WON!</h1>
+        <button onclick="location.reload()">Restart</button>
+    </div>
+    <div class="one-life"></div>
+    <div class="inputs">
+        <input type="checkbox" id="hardcore">
+        <label for="hardcore">Hardcore Mode</label>
+    </div>
+    <button id="start">Start</button>
+    <div class="scene">
+        <div id="player"></div>
+        <div id="bullets"></div>
+        <div id="enemy"></div>
+        <div id="bonuses"></div>
+        <div class="ui">
+            <div id="lifebar">
+                <progress min="0" max="3" value="3"></progress>
+            </div>
+            <div id="bosslife">
+                <div id="bossname">Meridia</div>
+                <progress min="0" max="100" value="100">
+                </progress>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js" type="module"></script>
+</body>
+
+</html>

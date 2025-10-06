@@ -1,0 +1,125 @@
+:root {
+  --pwidth: 50px;
+  --pheight: 50px;
+  --basebwidth: 10px;
+  --basebheight: 10px;
+  --ewidth: 60px;
+  --eheight: 60px;
+  --basebonuswidth: 30px;
+  --basebonusheight: 30px;
+}
+
+#player {
+  position: absolute;
+  background-size: contain;
+  width: var(--pwidth);
+  height: var(--pheight);
+  transition: 0.05s;
+}
+
+.bullet {
+  position: absolute;
+  background-size: contain;
+  width: var(--basebwidth);
+  height: var(--basebheight);
+  transition: 0.05s;
+}
+
+#enemy {
+  position: absolute;
+  z-index: 10;
+  background-size: contain;
+  width: var(--ewidth);
+  height: var(--eheight);
+  transition: 0.05s;
+}
+
+#lifebar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+#lifebar progress {
+  height: 50px;
+  width: 500px;
+  color: red;
+}
+
+#bosslife progress {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 5%;
+  height: 50px;
+}
+
+#bossname {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  font-family: monospace;
+  font-size: 200%;
+  z-index: 10;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+.bonus {
+  background-size: contain;
+  position: absolute;
+  width: var(--basebonuswidth);
+  height: var(--basebonusheight);
+}
+
+.one-life {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 50px 20px red;
+  z-index: 5;
+  display: none;
+}
+
+#win {
+  position: absolute;
+  left: 50%;
+  top: -20%;
+  transform: translate(-50%, -50%);
+  font-family: monospace;
+  font-size: 200%;
+  z-index: 10;
+  background-color: gold;
+  padding: 10px 200px;
+  text-align: center;
+  border-radius: 20px;
+  display: none;
+}
+
+@keyframes die {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes win {
+    0% {
+        top: -20%;
+        opacity: 0;
+    }
+    100% {
+        top: 20%;
+        opacity: 1;
+    }
+}
